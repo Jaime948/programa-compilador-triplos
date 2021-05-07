@@ -5,6 +5,7 @@ import re
 patron1=r"^\w+\s\=\s\w+\s[+*-/]\s\w+\s[+*-/]\s\w+$" 
 patron2=r"^\w+\s\=\s\w+\s[+*-/]\s\w+\s[+*-/]\s\w+\s[+*-/]\s\w+$"
 patron3=r"^\w+\s\=\s[(]\s\w+\s[+-/]\s\w+\s[)]\s\/\s\w+\s[+-/]\s\w+$|^\w+\s\=\s\w+\s[+-/]\s\w+\s[+-/]\s[(]\s\w+\s[+-/]\s\w+\s[)]$|^\w+\s\=\s\w+\s[+-/]\s[(]\s\w+\s[+-/]\s\w+\s[)]\s[+-/]\s\w+$|^\w+\s\=\s[(]\s\w+\s[+-/]\s\w+\s[)]\s[+-/]\s\w+\s[+*-/]\s\w+$"
+patron4 = r"^\w+\s\=\s[(]\s\w+\s[+*-/]\s\w+\s[)]\s[+*-/]\s[(]\s\w+\s[+*-/]\s\w+\s[)]$"
 cont=0
 cont1=0
 cont2=0
@@ -129,4 +130,25 @@ if coincidencias2 >= 1:
                         print("_t3 = "+"_t1 "+dato_div[cont2-1]+" _t2")
     print("X = _t3")
 
+
+coincidencias3 = len(re.findall(patron4, dato)) #verificacion de la concidencia unaves verificado entra al if si es la exprecion corespondiente
+if coincidencias3 >=1:
+    dato_div = dato.split() ##sementacion o separacion por partes de la exprecion en partes mediante un el metodo split()
+     #manejo de for anidados para recorrer todo la lista generada de la exprecion ingresada
+    #para poder ordenar y realisar imprecion en base a las reglas o las jerarquias de operaciones
+    #en este caso al tratarse de una exprecion de dos parantesis se trata de realisar las operaciones qun estan dentro del los parantesis 
+    #para continuar con la divicion
+    for i in dato_div:
+        cont = cont + 1
+        if i =="(": 
+            if cont < 4:
+                print("_t1 = "+dato_div[cont]+" "+dato_div[cont+1]+" "+dato_div[cont+2])
+        if i ==")": 
+            if cont > 12:
+                break
+            elif dato_div[cont+1] == "(":
+                cont2 = cont + 3
+                print("_t2 = "+dato_div[cont2-1]+" "+dato_div[cont2]+" "+dato_div[cont2+1])
+                print("_t3 = _t1 "+dato_div[cont2-3]+" _t2")
+    print("X = _t3")
 
