@@ -6,6 +6,7 @@ patron1=r"^\w+\s\=\s\w+\s[+*-/]\s\w+\s[+*-/]\s\w+$"
 patron2=r"^\w+\s\=\s\w+\s[+*-/]\s\w+\s[+*-/]\s\w+\s[+*-/]\s\w+$"
 patron3=r"^\w+\s\=\s[(]\s\w+\s[+-/]\s\w+\s[)]\s\/\s\w+\s[+-/]\s\w+$|^\w+\s\=\s\w+\s[+-/]\s\w+\s[+-/]\s[(]\s\w+\s[+-/]\s\w+\s[)]$|^\w+\s\=\s\w+\s[+-/]\s[(]\s\w+\s[+-/]\s\w+\s[)]\s[+-/]\s\w+$|^\w+\s\=\s[(]\s\w+\s[+-/]\s\w+\s[)]\s[+-/]\s\w+\s[+*-/]\s\w+$"
 patron4 = r"^\w+\s\=\s[(]\s\w+\s[+*-/]\s\w+\s[)]\s[+*-/]\s[(]\s\w+\s[+*-/]\s\w+\s[)]$"
+patron5 = r"^\w+\s\=\s\w+\s[+*-/]\s\w+\s[+*-/]\s[(]\s[(]\s\w+\s[+*-/]\s\w+\s[)]\s[+*-/]\s\w+\s[)]$"
 cont=0
 cont1=0
 cont2=0
@@ -21,6 +22,8 @@ if concidencias>=1:
   #se emplean ifs para poder determinar los diferentes escenarios posibles que se podrian ingresar 
   #es decir la pocicion en que se encuentra la divicion o multiplicacion ya que la posicion aecta lo que es la imprecion de..
   #los o del codigo intermedio que se genera.
+  #este forma no se le aplico alas demas expreciones ya que implicaria mas codigo ya se estarian realisando las 
+  #diferentes conparaciones con if, lo cual nos ahoraria codigo con la implementacion de varios for.
   for i in dato_div:
     cont=cont+1
     if i=="/":
