@@ -155,3 +155,32 @@ if coincidencias3 >=1:
                 print("_t3 = _t1 "+dato_div[cont2-3]+" _t2")
     print("X = _t3")
 
+coincidencias1 = len(re.findall(patron5, dato))
+if coincidencias1 >=1:
+    dato_separado = dato.split() 
+    for i in dato_separado:
+        cont = cont + 1 
+        if dato_separado[cont-1] == "(":
+            if dato_separado[cont] =="(":
+                print("_t1 = "+dato_separado[cont+1]+" "+dato_separado[cont+2]+" "+dato_separado[cont+3])
+
+        if dato_separado[cont-1] == ")":
+            cont = cont - 1
+            if dato_separado[cont+3] == ")":
+                print("_t2 = "+"_t1 "+dato_separado[cont+1]+" "+dato_separado[cont+2])
+                cont = 15
+                cont2 = cont - 9
+                if cont2 == 6:
+                    for i in (dato_separado[cont2],-1,-1,-1):
+                        cont2 = cont2 - 1
+                        if dato_separado[cont2] == "/" or dato_separado[cont2] == "*":
+                            if dato_separado[cont2+1] == "(":
+                                print("_t3 = "+"_t2 "+dato_separado[cont2]+" "+dato_separado[cont2-1])
+                                print("_t4 = " + "_t3 " + dato_separado[cont2-2] + " " +dato_separado[cont2-3])
+                            else:
+                                print("_t3 = "+dato_separado[cont2-1]+" "+dato_separado[cont2]+" "+dato_separado[cont2+1])
+                                print("_t4 = " + "_t3 " + dato_separado[cont2+2] + " _t2")
+                if cont == 15:
+                    break
+    print("X = _t4")
+
