@@ -56,8 +56,8 @@ if concidencias>=1:
             print("_t2= "+"_t1 "+" - "+dato_div[6])
             print("x = _t2")
         
-coincidencias1 = len(re.findall(patron2, dato))#con esta linea de codigo se verifica si es la expresion que se debe trabajar en te bloque de codigo
-if coincidencias1 >= 1:
+coincidencias = len(re.findall(patron2, dato))#con esta linea de codigo se verifica si es la expresion que se debe trabajar en te bloque de codigo
+if coincidencias >= 1:
     dato_div = dato.split() #sementacion o separacion por partes de la exprecion en partes mediante un el metodo split
     #manejo de for anidados para recorrer todo la lista generada de la exprecion ingresada
     #para poder ordenar y realisar imprecion en base a las reglas o las jerarquias de operaciones
@@ -90,8 +90,8 @@ if coincidencias1 >= 1:
     print("X = _t3")
 
 
-coincidencias2 = len(re.findall(patron3, dato))#con esta linea de codigo se verifica si es la expresion que se debe trabajar en te bloque de codigo
-if coincidencias2 >= 1:
+coincidencias = len(re.findall(patron3, dato))#con esta linea de codigo se verifica si es la expresion que se debe trabajar en te bloque de codigo
+if coincidencias >= 1:
     dato_div = dato.split() #sementacion o separacion por partes de la exprecion en partes mediante un el metodo split()
     #manejo de for anidados para recorrer todo la lista generada de la exprecion ingresada
     #para poder ordenar y realisar imprecion en base a las reglas o las jerarquias de operaciones
@@ -134,8 +134,8 @@ if coincidencias2 >= 1:
     print("X = _t3")
 
 
-coincidencias3 = len(re.findall(patron4, dato)) #verificacion de la concidencia unaves verificado entra al if si es la exprecion corespondiente
-if coincidencias3 >=1:
+coincidencias = len(re.findall(patron4, dato)) #verificacion de la concidencia unaves verificado entra al if si es la exprecion corespondiente
+if coincidencias >=1:
     dato_div = dato.split() ##sementacion o separacion por partes de la exprecion en partes mediante un el metodo split()
      #manejo de for anidados para recorrer todo la lista generada de la exprecion ingresada
     #para poder ordenar y realisar imprecion en base a las reglas o las jerarquias de operaciones
@@ -155,8 +155,8 @@ if coincidencias3 >=1:
                 print("_t3 = _t1 "+dato_div[cont2-3]+" _t2")
     print("X = _t3")
 
-coincidencias1 = len(re.findall(patron5, dato))
-if coincidencias1 >=1:
+coincidencias = len(re.findall(patron5, dato))
+if coincidencias >=1:
     dato_separado = dato.split() 
     for i in dato_separado:
         cont = cont + 1 
